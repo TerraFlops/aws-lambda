@@ -1,33 +1,43 @@
-variable "name" {
-  description = "The name of the REST API"
+variable "function_name" {
+  description = "The name of the lambda function"
   type = string
 }
 
-variable "stage_name" {
-  description = "The stage name for the API deployment (production/staging/etc..)"
+variable "runtime" {
+  description = "The runtime of the lambda to create"
   type = string
 }
 
-variable "method" {
-  description = "The HTTP method"
-  default = "GET"
+variable "filename" {
+  description = "Filename"
   type = string
 }
 
-variable "lambda" {
-  description = "The lambda name to invoke"
+variable "handler" {
+  description = "The handler name of the lambda function"
   type = string
 }
 
-variable "lambda_arn" {
-  description = "The lambda arn to invoke"
+variable "memory" {
+  description = "The memory size of the lambda function"
+  type = number
+}
+
+variable "role" {
+  description = "IAM role attached to the Lambda Function (ARN)"
   type = string
 }
 
-variable "custom_domain" {
-  type = string
+variable "subnet_ids" {
+  description = "Which subnets to associate with lambda"
+  type = set(string)
 }
 
-variable "custom_domain_certificate_arn" {
+variable "security_group_ids" {
+  description = "Which security groups to associate with lambda"
+  type = set(string)
+}
+
+variable "description" {
   type = string
 }

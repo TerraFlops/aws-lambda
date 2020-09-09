@@ -1,15 +1,11 @@
-output "http_method" {
-  value = aws_api_gateway_integration_response.response_method_integration.http_method
+output "name" {
+  value = aws_lambda_function.lambda.function_name
 }
 
-output "api_url" {
-  value = aws_api_gateway_deployment.deployment.invoke_url
+output "arn" {
+  value = aws_lambda_function.lambda.arn
 }
 
-output "cloudfront_domain_name" {
-  value = aws_api_gateway_domain_name.domain.cloudfront_domain_name
-}
-
-output "cloudfront_zone_id" {
-  value = aws_api_gateway_domain_name.domain.cloudfront_zone_id
+output "version" {
+  value = aws_lambda_function.lambda.version
 }
